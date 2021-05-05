@@ -1,0 +1,11 @@
+.main {
+    padding-top: 75px;
+}
+
+.light {
+    background-image: url('../images/bg_index_light.gif');
+}
+
+.dark {
+    background-image: url('../images/bg_index_dark.gif');
+}
