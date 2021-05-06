@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="styles/global.css" type="text/css" />
         <script src="scripts/bootstrap-sncf.metier.v4.3.1-r5/bootstrap-sncf.js"></script>
         <script src="scripts/appareance.js"></script>
-        <title>InfoGares Admin</title>
+        <title>InfoGares Admin - Recherche</title>
     </head>
     <body class="light">
         <div class="bd-example">
@@ -78,7 +78,37 @@
         </div>
 
         <div class="main">
-          <h1><center>InfoGares Admin</center></h1>
+          <h1>Résultats de la recherche</h1>
+          <div class="select-improved" data-component="select-exclusive">
+            <div class="select-control">
+              <div class="input-group" data-role="select-toggle">
+                <p class="form-control is-placeholder  d-flex align-items-center" data-role="placeholder" data-selected-prefix="Sélection actuelle">Type de recherche</p>
+                <select class="sr-only" id="search_type" data-role="input" tabindex="-1" aria-hidden="true">
+                  <option data-role="default-hidden-option" disabled hidden>Tout</option>
+                  <option selected data-id="1" >Tout</option>
+                  <option data-id="2" >Utilisateur</option>
+                  <option data-id="3" >Gare</option>
+                  <option data-id="4" >Train</option>
+                </select>
+                <div class="input-group-append input-group-last">
+                  <button class="btn btn-primary btn-only-icon " data-role="btn" type="button" aria-expanded="false" aria-controls="selecttoggle">
+                    <i class="icons-arrow-down icons-size-x75" aria-hidden="true"></i>
+                    <span class="sr-only">Sélectionner</span>
+                  </button>
+                </div>
+              </div>
+              <div class="select-menu" id="-selecttoggle">
+                <div class="d-flex flex-column">
+                  <div class="flex-fluid overflow-y" role="list" data-role="menu">
+                    <span class="select-menu-item selected" role="listitem"><button type="button" data-role="value" data-target="1">Tout</button></span>
+                    <span class="select-menu-item" role="listitem"><button type="button" data-role="value" data-target="2">Utilisateur</button></span>
+                    <span class="select-menu-item" role="listitem"><button type="button" data-role="value" data-target="3">Gare</button></span>
+                    <span class="select-menu-item" role="listitem"><button type="button" data-role="value" data-target="4">Train</button></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>
 
         <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_title" aria-hidden="true">
