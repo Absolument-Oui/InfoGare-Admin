@@ -8,7 +8,7 @@
         <script src="scripts/appareance.js"></script>
         <title>InfoGares Admin - Recherche</title>
     </head>
-    <body class="light">
+    <body class="light" onload="loadSearch();">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -76,7 +76,7 @@
             </ul>
           </div>
         </div>
-
+        
         <div class="main">
           <h1>Résultats de la recherche</h1>
           <div class="select-improved" data-component="select-exclusive">
@@ -108,7 +108,20 @@
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
+          <br><br>
+          <table class="table table-hover">
+          <caption class="sr-only">Résultats de la recherche</caption>
+          <thead>
+            <tr>
+              <th scope="col" id="cellresult"><div class="cell-inner">Résultat</div></th>
+              <th scope="col" id="celltype"><div class="cell-inner">Type</div></th>
+            </tr>
+          </thead>
+          <tbody id="cellsresults">
+
+          </tbody>
+        </table>
         </div>
 
         <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_title" aria-hidden="true">
@@ -149,6 +162,7 @@
         <script src="scripts/init.js"></script>
         <script src="scripts/profile.js"></script>
         <script src="scripts/commands.js"></script>
+        <script src="scripts/search.js"></script>
         
     </body>
 </html>
