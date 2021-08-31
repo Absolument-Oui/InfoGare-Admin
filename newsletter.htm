@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="styles/global.css" type="text/css" />
         <script src="scripts/bootstrap-sncf.metier.v4.3.1-r5/bootstrap-sncf.js"></script>
         <script src="scripts/appareance.js"></script>
-        <title>InfoGares Admin</title>
+        <title>InfoGares Admin - Newsletter</title>
     </head>
-    <body class="light">
+    <body class="light" onload="loadNewsletter();">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -78,10 +78,19 @@
         </div>
 
         <div class="main">
-          <h1><center>InfoGares Admin</center></h1>
-
-          <h1>Outils</h1>
-          <h4><a href="newsletter.htm">Gestion de la newsletter</a></h4>
+          <h1><center>Gestion de la newsletter</center></h1>
+          <h2>Liste des emails de la mailing list</h2>
+          <span id="newsletter_span"></span>
+          <br><br><br><br><br>
+          <h1>Modèle de newsletter pour l'envoi</h1>
+          <label for="new_func_edit">Nouvelles fonctionnalités</label>
+          <div class="form-control-container">
+            <textarea class="form-control" id="new_func_edit"></textarea>
+            <span class="form-control-state"></span>
+          </div><br>
+          <button class="btn" id="validate" onclick="modifyTemplate();">Modifier le modèle</button>
+          <br>
+          <iframe src="newsletter_template.htm" id="template" height="100%" width="100%"></iframe>
         </div>
 
         <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_title" aria-hidden="true">
@@ -121,6 +130,7 @@
 
         <script src="scripts/init.js"></script>
         <script src="scripts/profile.js"></script>
+        <script src="scripts/newsletter.js"></script>
         <script src="scripts/commands.js"></script>
         
     </body>

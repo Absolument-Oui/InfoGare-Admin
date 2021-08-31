@@ -8,7 +8,7 @@
         <script src="scripts/appareance.js"></script>
         <title>InfoGares Admin</title>
     </head>
-    <body class="light">
+    <body class="light" onload="loadBetas();">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -78,10 +78,10 @@
         </div>
 
         <div class="main">
-          <h1><center>InfoGares Admin</center></h1>
+          <h1><center>Beta</center></h1>
 
-          <h1>Outils</h1>
-          <h4><a href="newsletter.htm">Gestion de la newsletter</a></h4>
+          <h2>Nombre de béta-testeurs : <span id="betas_nbr"></span></h2>
+          <h2>Liste des béta-testeurs : <span id="betas"></span></h2>
         </div>
 
         <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_title" aria-hidden="true">
@@ -122,6 +122,7 @@
         <script src="scripts/init.js"></script>
         <script src="scripts/profile.js"></script>
         <script src="scripts/commands.js"></script>
+        <script src="scripts/betas.js"></script>
         
     </body>
 </html>
