@@ -10,13 +10,13 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-function checkProfileAuthorization(user) {
-    firebase.database().ref().child('users').child(user.uid).get().then((snapshot) => {
-        if (snapshot.val().admin != true) {
-            window.location.href="admin_access_refused.htm"
-        }
+function checkAdmin(userid) {
+    firebase.database().ref('users/'+userid).get().then((snapshot) => {
+      if (!snapshot.val().admin) {
+        window.location.replace('admin_access_refused.htm');
+      }
     })
-}
+  }
 
 function logout() {
     firebase.auth().signOut().then(() => {
@@ -26,7 +26,6 @@ function logout() {
 
 function login(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
-        checkProfileAuthorization
         window.location.reload();
     })
 }
