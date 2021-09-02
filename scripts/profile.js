@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         document.getElementById('username').innerText = user.displayName;
         document.getElementById('login').hidden = true;
-        checkProfileAuthorization(user);
+        checkAdmin(user);
     } else {
         document.getElementById('username').innerText = 'Se connecter';
         document.getElementById('pref').hidden = true;
