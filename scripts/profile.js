@@ -13,8 +13,8 @@ firebase.auth().onAuthStateChanged((user) => {
 function checkProfileAuthorization(user) {
     firebase.database().ref().child('users').child(user.uid).get().then((snapshot) => {
         if (snapshot.val().admin != true) {
-            alert('Vous n\'avez pas l\'autorisation de vous connecter ici !');
             logout();
+            window.location.href="admin_access_refused.htm"
         }
     })
 }
