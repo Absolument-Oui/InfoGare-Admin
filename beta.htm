@@ -14,7 +14,7 @@
         <meta name="googlebot" content="noindex">
 
     </head>
-    <body class="light" onload="loadBetas();">
+    <body class="light" onload="loadBetas(); checkLogin()">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -71,7 +71,7 @@
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" id="mycontrol">
                     <ul>
-                      <li class="dropdown-item" id="login"><a href="#" data-toggle="modal" data-target="#login_form">Se connecter</a></li>
+                      <li class="dropdown-item" id="login"><a href="#" onclick="login">Se connecter</a></li>
                       <li class="dropdown-item" id="pref"><a href="#">Pr&eacute;f&eacute;rences</a></li>
                       <li class="dropdown-item darkmode-btn"><a href="#" onclick="toggleDarkmode();">Mode clair/sombre</a></li>
                       <li class="dropdown-item" id="logout"><a href="#" onclick="logout();">Se d&eacute;connecter</a></li>

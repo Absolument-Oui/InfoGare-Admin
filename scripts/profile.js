@@ -18,3 +18,18 @@ function logout() {
 document.getElementById('login').onclick = function() {
     location.href = 'https://auth.infogare.fr/login.htm?returnurl=' + encodeURIComponent(location.href)+'&service=infogare&version=admin';
   }
+
+  function checkLogin() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        document.getElementById('login').hidden = true;
+        document.getElementById('username').innerText = user.displayName;
+        document.getElementById('logout').hidden = false;
+        this.user = user;
+      } else {
+        document.getElementById('login').hidden = false;
+        document.getElementById('username').innerText = 'Non connecté';
+        document.getElementById('logout').hidden = true;
+      }
+    });
+}
