@@ -15,8 +15,6 @@ function logout() {
     })
 }
 
-function login(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
-        window.location.reload();
-    })
-}
+document.getElementById('login').onclick = function() {
+    location.href = 'https://auth.infogare.fr/login.htm?returnurl=' + encodeURIComponent(location.href)+'&service=infogare&version=admin';
+  }
