@@ -9,6 +9,13 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
+function loginWithToken(token) {
+  firebase.auth().signInWithCustomToken(token).then((user) => {
+    console.log(user.user.displayName);
+    window.location.href = location.pathname;
+  })
+}
+
 function logout() {
     firebase.auth().signOut().then(() => {
         window.location.reload();
