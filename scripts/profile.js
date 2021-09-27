@@ -23,7 +23,7 @@ function logout() {
 }
 
 document.getElementById('login').onclick = function() {
-    location.href = 'https://auth.infogare.fr/login.htm?returnurl=' + encodeURIComponent(location.href)+'&service=infogare&version=admin';
+    location.href = 'https://auth.infogare.fr/redirect.htm?returnurl=' + encodeURIComponent(location.href)+'&service=infogare&version=admin';
   }
 
   function checkLogin() {
