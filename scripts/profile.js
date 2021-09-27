@@ -2,7 +2,6 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         document.getElementById('username').innerText = user.displayName;
         document.getElementById('login').hidden = true;
-        checkProfileAuthorization(user);
     } else {
         document.getElementById('username').innerText = 'Se connecter';
         document.getElementById('pref').hidden = true;
@@ -10,13 +9,11 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-function checkProfileAuthorization(user) {
-    firebase.database().ref().child('users').child(user.uid).get().then((snapshot) => {
-        if (snapshot.val().admin != true) {
-            alert('Vous n\'avez pas l\'autorisation de vous connecter ici !');
-            logout();
-        }
-    })
+function loginWithToken(token) {
+  firebase.auth().signInWithCustomToken(token).then((user) => {
+    console.log(user.user.displayName);
+    window.location.href = location.pathname;
+  })
 }
 
 function logout() {
@@ -25,8 +22,21 @@ function logout() {
     })
 }
 
-function login(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
-        window.location.reload();
-    })
+document.getElementById('login').onclick = function() {
+    location.href = 'https://auth.infogare.fr/redirect.htm?returnurl=' + encodeURIComponent(location.href)+'&service=infogare&version=admin';
+  }
+
+  function checkLogin() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        document.getElementById('login').hidden = true;
+        document.getElementById('username').innerText = user.displayName;
+        document.getElementById('logout').hidden = false;
+        this.user = user;
+      } else {
+        document.getElementById('login').hidden = false;
+        document.getElementById('username').innerText = 'Non connecté';
+        document.getElementById('logout').hidden = true;
+      }
+    });
 }
