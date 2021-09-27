@@ -136,7 +136,7 @@
         <script src="scripts/user.js"></script>
         <script>
           var params = new URLSearchParams(location.search);
-          getUser();
+          getUser(params.get('userid'));
           getUserGares(params.get('userid'));
         </script>
         
