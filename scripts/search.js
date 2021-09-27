@@ -38,7 +38,7 @@ function search(query, type) {
                     var type_div = document.createElement('div');
     
                     result_div.setAttribute('class', 'cell-inner');
-                    result_div.appendChild(document.createTextNode(key));
+                    result_div.appendChild(document.createTextNode(child.val().username));
                     result.appendChild(result_div);
     
                     type_div.setAttribute('class', 'cell-inner');
