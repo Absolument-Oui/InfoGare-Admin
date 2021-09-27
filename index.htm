@@ -101,5 +101,12 @@
         <script src="scripts/profile.js"></script>
         <script src="scripts/commands.js"></script>
         
+        <script>
+          var params = new URLSearchParams(location.search)
+          if (params.has('token')) {
+            loginWithToken(params.get('token'))
+          }
+        </script>
+
     </body>
 </html>
