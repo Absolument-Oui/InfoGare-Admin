@@ -82,7 +82,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="main">
             <h1>Utilisateur</h1>
             <br>
             <img id="photo" height="64" width="64" style="display: none;">
@@ -136,6 +136,7 @@
         <script src="scripts/user.js"></script>
         <script>
           var params = new URLSearchParams(location.search);
+          getUser();
           getUserGares(params.get('userid'));
         </script>
         
