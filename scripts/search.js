@@ -28,7 +28,7 @@ function search(query, type) {
 
                 document.getElementById('cellsresults').appendChild(tr);
             }
-            if (child.val().username.indexOf(query) == 0) {
+            if (child.val().username !== undefined & child.val().username.indexOf(query) == 0) {
                 var tr = document.createElement('tr');
                 var result = document.createElement('td');
                 var result_div = document.createElement('div');
