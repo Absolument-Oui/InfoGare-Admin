@@ -1,5 +1,17 @@
 const database = firebase.database().ref('users');
 
+function getUser(user) {
+    database.child(user).get().then((snapshot) => {
+        if (snapshot.val().photo !== undefined) {
+            document.getElementById('photo').src = snapshot.val().photo;
+            document.getElementById('photo').style.display = 'block';
+            document.getElementById('no_photo').style.display = 'none';
+        }
+        document.getElementById('email').innerText = snapshot.val().email;
+        document.getElementById('username').innerText = snapshot.val().username;
+    });
+}
+
 function getUserGares(user) {
     database.child(user).child('gares').get().then((snapshot) => {
         snapshot.forEach((childsnapshot) => {
