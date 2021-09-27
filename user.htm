@@ -83,6 +83,10 @@
             <br>
             <h2 id="username"></h2>
             <h3 id="email"></h3>
+            <br><br>
+            <div id="gares">
+
+            </div>
         </div>
 
         <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_title" aria-hidden="true">
@@ -122,6 +126,12 @@
 
         <script src="scripts/init.js"></script>
         <script src="scripts/profile.js"></script>
+        <script src="scripts/commands.js"></script>
+        <script src="scripts/user.js"></script>
+        <script>
+          var params = new URLSearchParams(location.search);
+          getUserGares(params.get('userid'));
+        </script>
         
     </body>
 </html>

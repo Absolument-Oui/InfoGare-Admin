@@ -23,6 +23,9 @@ function search(query, type) {
                 tr.appendChild(result);
                 tr.appendChild(type);
 
+                tr.setAttribute('cursor', 'pointer');
+                tr.setAttribute('onclick', 'location.href="user.htm?userid="'+child.key);
+
                 document.getElementById('cellsresults').appendChild(tr);
             }
         })
