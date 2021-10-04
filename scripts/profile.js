@@ -33,9 +33,9 @@ document.getElementById('login').onclick = function() {
         document.getElementById('username').innerText = user.displayName;
         document.getElementById('logout').hidden = false;
         if (user.photoURL !== undefined) {
-          document.getElementById('mnu_user_photo').src = user.photoURL;
-          document.getElementById('mnu_user_photo').style.display = 'block';
-          document.getElementById('mnu_user_no_photo').style.display = 'none';
+          document.getElementById('user_photo').src = user.photoURL;
+          document.getElementById('user_photo').style.display = 'block';
+          document.getElementById('user_no_photo').style.display = 'none';
         }
         this.user = user;
       } else {
