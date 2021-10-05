@@ -23,7 +23,7 @@ function loadUsers() {
             tr.setAttribute('cursor', 'pointer');
             tr.setAttribute('onclick', 'location.href="user.htm?userid="'+child.key);
 
-            document.getElementById('user').appendChild(tr);    
+            document.getElementById('users').appendChild(tr);    
         })
     })
 }
