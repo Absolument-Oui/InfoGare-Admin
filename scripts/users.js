@@ -21,7 +21,7 @@ function loadUsers() {
             tr.appendChild(type);
 
             tr.setAttribute('cursor', 'pointer');
-            tr.setAttribute('onclick', 'location.href="user.htm?userid="'+child.key);
+            tr.setAttribute('onclick', 'location.href="user.htm?userid='+child.key+'";');
 
             document.getElementById('users').appendChild(tr);    
         })
