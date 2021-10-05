@@ -71,7 +71,7 @@
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" id="mycontrol">
                     <ul>
-                      <li class="dropdown-item" id="login"><a onclick="login">Se connecter</a></li>
+                      <li class="dropdown-item" id="login"><a style="cursor: pointer;" onclick="login">Se connecter</a></li>
                       <li class="dropdown-item" id="pref"><a href="#">Pr&eacute;f&eacute;rences</a></li>
                       <li class="dropdown-item darkmode-btn"><a href="#" onclick="toggleDarkmode();">Mode clair/sombre</a></li>
                       <li class="dropdown-item" id="logout"><a href="#" onclick="logout();">Se d&eacute;connecter</a></li>
@@ -90,6 +90,12 @@
             <i id="no_photo" class="icons-circle-account-connected icons-size-66px"></i>
             <h2 id="username"></h2>
             <h3 id="email"></h3>
+            <label>Béta</label>
+            <label for="beta" class="switch-control">
+              <span class="sr-only">On/Off switch</span>
+              <input id="beta" type="checkbox" class="sr-only" checked>
+              <span class="switch-control-slider"></span>
+            </label>
             <br><br>
             <div id="gares">
 
