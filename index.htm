@@ -25,7 +25,7 @@
             <header role="banner" class="mastheader-title d-none d-xl-block">
               <h1 class="text-uppercase text-white pt-2 pl-3 mb-0">InfoGare Admin</h1>
             </header>
-            <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar">
+            <div class="mastheader-search pr-md-4 pl-md-4" data-component="searchbar" style="display: none;" id="searchbar">
               <label for="galacticbar-search-input" class="font-weight-medium text-white pr-3 mb-0">Rechercher</label>
               <div class="input-group align-items-center">
                 <div class="form-control-container" data-component="control" data-clear-option="true" role="search">
@@ -85,12 +85,18 @@
         </div>
 
         <div class="main">
-          <br>
-          <h1>Outils</h1>
-          <h4><a href="users.htm">Gestion des utilisateurs</a></h4>
-          <h4><a href="beta.htm">Gestion des utilisateurs bêta</a></h4>
-          <h4><a href="dev.htm">Gestion des développeurs</a></h4>
-          <h4><a href="newsletter.htm">Gestion de la newsletter</a></h4>
+          <div style="display: none;" id="connected">
+            <br>
+            <h1>Outils</h1>
+            <h4><a href="users.htm">Gestion des utilisateurs</a></h4>
+            <h4><a href="beta.htm">Gestion des utilisateurs bêta</a></h4>
+            <h4><a href="dev.htm">Gestion des développeurs</a></h4>
+            <h4><a href="newsletter.htm">Gestion de la newsletter</a></h4>
+          </div>
+          <div id="not_connected">
+            <br>
+            <h1>Bienvenue sur InfoGare Admin !</h1>
+          </div>
         </div>
 
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -107,6 +113,18 @@
           if (params.has('token')) {
             loginWithToken(params.get('token'))
           }
+
+          firebase.auth().onAuthStateChanged((user) => { 
+            if (user) {
+              document.getElementById('connected').style.display = 'block';
+              document.getElementById('not_connected').style.display = 'none';
+              document.getElementById('searchbar').style.display = 'block';
+            } else {
+              document.getElementById('connected').style.display = 'none';
+              document.getElementById('not_connected').style.display = 'block';
+              document.getElementById('searchbar').style.display = 'none';
+            }
+          })
         </script>
 
     </body>
