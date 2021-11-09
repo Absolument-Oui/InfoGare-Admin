@@ -13,7 +13,7 @@
         <meta name="robots" content="noindex">
         <meta name="googlebot" content="noindex">
     </head>
-    <body class="light" onload="checkLogin()">
+    <body class="light" onload="checkPerms(); checkLogin()">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -142,10 +142,15 @@
         <script src="scripts/profile.js"></script>
         <script src="scripts/commands.js"></script>
         <script src="scripts/user.js"></script>
+		<script src="scripts/authorization.js"></script>
         <script>
-          var params = new URLSearchParams(location.search);
-          getUser(params.get('userid'));
-          getUserGares(params.get('userid'));
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              	var params = new URLSearchParams(location.search);
+              	getUser(params.get('userid'));
+              	getUserGares(params.get('userid'));
+            }
+          });
         </script>
         
     </body>
