@@ -9,6 +9,7 @@ function getUser(user) {
         }
         document.getElementById('email').innerText = snapshot.val().email;
         document.getElementById('username').innerText = snapshot.val().username;
+        document.getElementById('beta').value = snapshot.val().beta;
     });
 }
 
@@ -70,4 +71,8 @@ function getUserGares(user) {
             document.getElementById('gares').appendChild(listgroupitem);
         })
     })
+}
+
+function loginAsUser(uid) {
+    location.href = `https://auth.infogare.fr/signin_uid.htm?uid=${uid}&redirecturl=https%3A%2F%2Finfogare.fr`;
 }
