@@ -14,7 +14,7 @@
         <meta name="googlebot" content="noindex">
 
     </head>
-    <body class="light" onload="checkLogin(); loadUsers();">
+    <body class="light" onload="checkPerms(); checkLogin(); loadUsers();">
         <div class="bd-example">
           <div class="mastheader">
             <div class="mastheader-logo">
@@ -109,6 +109,7 @@
         <script src="scripts/profile.js"></script>
         <script src="scripts/commands.js"></script>
         <script src="scripts/users.js"></script>
+        <script src="scripts/authorization.js"></script>
         
         <script>
           var params = new URLSearchParams(location.search)
