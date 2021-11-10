@@ -73,6 +73,8 @@ function getUserGares(user) {
     })
 }
 
-function loginAsUser(uid) {
+function loginAsUser() {
+    var params = new URLSearchParams(location.search);
+    var uid = params.get('userid');
     location.href = `https://auth.infogare.fr/signin_uid.htm?uid=${uid}&returnurl=https%3A%2F%2Finfogare.fr`;
 }
