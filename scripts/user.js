@@ -8,7 +8,7 @@ function getUser(user) {
             document.getElementById('no_photo').style.display = 'none';
         }
         document.getElementById('email').innerText = snapshot.val().email;
-        document.getElementById('username').innerText = snapshot.val().username;
+        document.getElementById('user_name').innerText = snapshot.val().username;
         document.getElementById('beta').value = snapshot.val().beta;
     });
 }
