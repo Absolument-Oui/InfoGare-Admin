@@ -78,3 +78,13 @@ function loginAsUser() {
     var uid = params.get('userid');
     window.open(`https://auth.infogare.fr/signin_uid.htm?uid=${uid}&returnurl=https%3A%2F%2Finfogare.fr`);
 }
+
+function modifyBeta() {
+    var params = new URLSearchParams(location.search);
+    var uid = params.get('userid');
+    database.child(uid).update({
+        beta: document.getElementById('beta').value
+    }).then(() => {
+        alert('Statut beta modifié !');
+    });
+}
