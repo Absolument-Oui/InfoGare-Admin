@@ -9,7 +9,7 @@ function getUser(user) {
         }
         document.getElementById('email').innerText = snapshot.val().email;
         document.getElementById('user_name').innerText = snapshot.val().username;
-        document.getElementById('beta').value = snapshot.val().beta;
+        document.getElementById('beta').checked = snapshot.val().beta;
     });
 }
 
@@ -83,7 +83,7 @@ function modifyBeta() {
     var params = new URLSearchParams(location.search);
     var uid = params.get('userid');
     database.child(uid).update({
-        beta: document.getElementById('beta').value
+        beta: document.getElementById('beta').checked
     }).then(() => {
         alert('Statut beta modifié !');
     });
