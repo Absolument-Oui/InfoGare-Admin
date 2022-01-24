@@ -93,8 +93,8 @@
             <label>Bêta</label>
             <label for="beta" class="switch-control">
               <span class="sr-only">On/Off switch</span>
-              <input id="beta" type="checkbox" class="sr-only" onclick="document.getElementById('beta').value != document.getElementById('beta').value;">
-              <span class="switch-control-slider"></span>
+              <input id="beta" type="checkbox" class="sr-only">
+              <span class="switch-control-slider" onclick="document.getElementById('beta').value != document.getElementById('beta').value;"></span>
             </label><br>
             <button class="btn btn-info" onclick="modifyBeta();">Appliquer</button><br><br>
             <button class="btn btn-primary" onclick="loginAsUser();">Se connecter à InfoGare</button>
