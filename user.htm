@@ -91,10 +91,11 @@
             <h2 id="user_name"></h2>
             <h3 id="email"></h3>
             <label>Bêta</label>
-            <div class="custom-control custom-checkbox ">
-              <input type="checkbox" name="beta" class="custom-control-input" id="beta">
-              <label class="custom-control-label" for="beta">Beta</label>
-            </div><br>
+            <label for="beta" class="switch-control">Beta
+              <span class="sr-only">On/Off switch</span>
+              <input id="beta" type="checkbox" class="sr-only">
+              <span class="switch-control-slider"></span>
+            </label><br>
             <button class="btn btn-info" onclick="modifyBeta();">Appliquer</button><br><br>
             <button class="btn btn-primary" onclick="loginAsUser();">Se connecter à InfoGare</button>
             <br><br>
