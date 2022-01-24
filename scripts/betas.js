@@ -31,7 +31,7 @@ var database = firebase.database().ref('users');
             tr.appendChild(uid);
 
             tr.setAttribute('cursor', 'pointer');
-            tr.setAttribute('onclick', 'location.href="user.htm?userid='+child.key+'";');
+            tr.setAttribute('onclick', 'location.href="user.htm?userid='+uid_lst[index]+'";');
 
             document.getElementById('table').appendChild(tr);
         })
